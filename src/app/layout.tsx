@@ -26,9 +26,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  alert("در این نمونه کار فقط بخش نمودار ها کامل شده و دیگر بخش ها  توسعه داده نشده")
-  
   return (
     <html lang="fa" dir="rtl">
       <body
