@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "زرداشبورد(در این نمونه کار فقط بخش نمودار ها کامل شده و دیگر بخش ها  توسعه داده نشده)",
+  title: "زرداشبورد",
   description: "نمونه کار Moein-03",
 };
 
@@ -26,6 +26,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  alert("در این نمونه کار فقط بخش نمودار ها کامل شده و دیگر بخش ها  توسعه داده نشده")
+  
   return (
     <html lang="fa" dir="rtl">
       <body
