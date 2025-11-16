@@ -1,8 +1,31 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "vazir";
+  src: url(vazir-font-v16.1.0/Vazir-Medium.eot),
+    url(vazir-font-v16.1.0/Vazir-Medium.ttf),
+    url(vazir-font-v16.1.0/Vazir-Medium.woff),
+    url(vazir-font-v16.1.0/Vazir-Medium.woff2);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "vazirThin";
+  src: url(vazir-font-v16.1.0/Vazir-Thin.eot),
+    url(vazir-font-v16.1.0/Vazir-Thin.ttf),
+    url(vazir-font-v16.1.0/Vazir-Thin.woff),
+    url(vazir-font-v16.1.0/Vazir-Thin.woff2);
+}
+
+@font-face {
+  font-family: "vazirBold";
+  src: url(vazir-font-v16.1.0/Vazir-Bold.eot),
+    url(vazir-font-v16.1.0/Vazir-Bold.ttf),
+    url(vazir-font-v16.1.0/Vazir-Bold.woff),
+    url(vazir-font-v16.1.0/Vazir-Bold.woff2);
 }
 
 @theme inline {
@@ -10,17 +33,133 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-6: var(--chart-6);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-chart-axis: var(--chart-axis);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "vazir"!important;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(21.563% 0.00976 285.525);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(21.563% 0.00976 285.525);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(21.563% 0.00976 285.525);
+  --primary: oklch(48.928% 0.24961 264.929);
+  --primary-foreground: oklch(81.79% 0.17046 77.947);
+  --secondary: oklch(81.79% 0.17046 77.947);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(97.015% 0.00011 271.152 / 0.5);
+  --muted-foreground: oklch(34.846% 0.00004 271.152 / 0.215);
+  --accent: oklch(81.79% 0.17046 77.947);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(81.79% 0.17046 77.947);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.8 0.2 85);
+  --chart-2: oklch(48.198% 0.12738 129.044);
+  --chart-3: oklch(62.604% 0.20268 140.284);
+  --chart-4: oklch(69.802% 0.19702 37.764);
+  --chart-5: oklch(0.75 0.19 85);
+  --chart-6: oklch(51.804% 0.24433 262.267);
+  --chart-background: oklch(1 0 0);
+  --chart-axis: oklch(0.25 0 0);
+  --chart-grid: oklch(0.9 0 0);
+  --sidebar: oklch(92.454% 0.03625 273.699);
+  --sidebar-foreground: oklch(21.563% 0.00976 285.525);
+  --sidebar-primary: oklch(48.928% 0.24961 264.929);
+  --sidebar-primary-foreground: oklch(81.79% 0.17046 77.947);
+  --sidebar-accent: oklch(81.79% 0.17046 77.947);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(81.79% 0.17046 77.947);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(25.96% 0.01492 285.295);
+  --foreground: oklch(80.877% 0.17029 75.348);
+  --card: oklch(25.96% 0.01492 285.295);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(25.96% 0.01492 285.295);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(48.928% 0.24961 264.929);
+  --primary-foreground: oklch(80.877% 0.17029 75.348);
+  --secondary: oklch(80.877% 0.17029 75.348);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(25.96% 0.01492 285.295);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(80.877% 0.17029 75.348);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(80.877% 0.17029 75.348);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.8 0.2 85);
+  --chart-2: oklch(48.198% 0.12738 129.044);
+  --chart-3: oklch(62.604% 0.20268 140.284);
+  --chart-4: oklch(69.802% 0.19702 37.764);
+  --chart-5: oklch(0.75 0.19 85);
+  --chart-6: oklch(51.804% 0.24433 262.267);
+  --chart-background: oklch(25.96% 0.01492 285.295);
+  --chart-axis: oklch(0.9 0 0);
+  --chart-grid: oklch(29.716% 0.00003 271.152);
+  --sidebar: oklch(25.96% 0.01492 285.295);
+  --sidebar-foreground: oklch(92.454% 0.03625 273.699);
+  --sidebar-primary: oklch(48.928% 0.24961 264.929);
+  --sidebar-primary-foreground: oklch(80.877% 0.17029 75.348);
+  --sidebar-accent: oklch(80.877% 0.17029 75.348);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(80.877% 0.17029 75.348);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: var(--chart-axis) !important;
 }
