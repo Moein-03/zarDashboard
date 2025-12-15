@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import AlertComponent from "@/components/layouts/AlertComponent";
 
 import "./globals.css";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <AlertComponent/>
           <Header/>
           {children}
           <Footer/>

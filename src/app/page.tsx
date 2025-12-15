@@ -69,23 +69,15 @@ export default async function Home() {
               <CardHeader>
                 <CardTitle className="font-thin">کالا ها</CardTitle>
                 <CardDescription className="text-background dark:text-card-foreground">
-                  Change your password here. After saving, you&apos;ll be logged
-                  out.
+                  لیست کالاها
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-6">
-                <div className="grid gap-3">
-                  <Label htmlFor="tabs-demo-current">Current password</Label>
-                  
-                </div>
-                <div className="grid gap-3">
-                  <Label htmlFor="tabs-demo-new">New password</Label>
+                <div className="flex flex-col gap-2">
                   
                 </div>
               </CardContent>
-              <CardFooter>
-                <Button>Save password</Button>
-              </CardFooter>
+              
             </Card>
           </TabsContent>
         </Tabs>
